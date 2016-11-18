@@ -23,6 +23,10 @@ class RecursionExercises1Spec extends Specification {
     RecursionExercises1.length(List(1, 2, 3, 4, 5, 6)) === 6
   }
 
+  "Length of Nil = 0" in {
+    RecursionExercises1.length(Nil) === 0
+  }
+
   "Add one to List(1,2,3,4,5,6) = List(2,3,4,5,6,7)" in {
     RecursionExercises1.map(List(1, 2, 3, 4, 5, 6), plusOne) === List(2, 3, 4, 5, 6, 7)
   }
@@ -47,6 +51,10 @@ class RecursionExercises1Spec extends Specification {
 
   "maxium of List(4,3,5,7,1,2,6,3,4,5,6) = 7" in {
     maximum(List(4, 3, 5, 7, 1, 2, 6, 3, 4, 5, 6)) === 7
+  }
+
+  "maxium of List(-1, -2) = -1" in {
+    maximum(List(-1, -2)) === -1
   }
 
   "Reverse a List(1,2,3,4,5,6) = List(6,5,4,3,2,1)" in {
