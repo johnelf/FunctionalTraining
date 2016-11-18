@@ -4,24 +4,24 @@ package com.rea.recursion
 // Taken from http://tmorris.net/posts/scala-exercises-for-beginners/index.html
 
 /**
- * Ok here are the rules.
- *
- * You can't use any of the standard list functions, like `map`, `filter`, `flatMap`, `append`, `:::`, `:+`, etc.
- * 
- * But you can always use `::` to construct a new list by prepending an element to another list.
- *
- * You CAN and are encouraged to use the solutions from the exercises below to solve the harder
- * ones towards the end.
- *
- * Keep an eye out for repetition and similarities between your answers.
- *
- * REMEMBER: Follow the types, they almost always guide you to the solution.  If it compiles and looks a little
- * too simple, it's probably correct.  As Sherlock Holmes once said, "Each one is suggestive, together they are
- * most certainly conclusive."
- *
- * See if you can make your solution tail recursive, where possible.
- *
- */
+  * Ok here are the rules.
+  *
+  * You can't use any of the standard list functions, like `map`, `filter`, `flatMap`, `append`, `:::`, `:+`, etc.
+  *
+  * But you can always use `::` to construct a new list by prepending an element to another list.
+  *
+  * You CAN and are encouraged to use the solutions from the exercises below to solve the harder
+  * ones towards the end.
+  *
+  * Keep an eye out for repetition and similarities between your answers.
+  *
+  * REMEMBER: Follow the types, they almost always guide you to the solution.  If it compiles and looks a little
+  * too simple, it's probably correct.  As Sherlock Holmes once said, "Each one is suggestive, together they are
+  * most certainly conclusive."
+  *
+  * See if you can make your solution tail recursive, where possible.
+  *
+  */
 object RecursionExercises1 {
 
   def plusOne(n: Int) = n + 1
@@ -29,7 +29,17 @@ object RecursionExercises1 {
   def minusOne(n: Int) = n - 1
 
   // Add two non-negative Integers together.  You are only allowed to use plusOne and minusOne above
-  def add(a: Int, b: Int): Int = ???
+  def add(a: Int, b: Int): Int = {
+//    var result = a
+//    for (i <- 1 to b) {
+//      result = plusOne(result)
+//    }
+//    result
+    if (b == 0)
+      a
+    else
+      add(plusOne(a), minusOne(b))
+  }
 
   // You are not permitted to use any list functions such as map, flatMap, ++, flatten etc
   def sum(l: List[Int]): Int = ???
